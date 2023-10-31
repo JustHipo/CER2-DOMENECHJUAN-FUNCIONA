@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'webapp/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'webapp/styles.css' %}">
+
+
+</head>
+
+
+<body>
+    <script src="{% static 'webapp/js/bootstrap.js' %}"></script>
+
+    <div class="container-fluid" >
+        <div class="row" id="Header" >
+            <div class="col-4">
+                <img id="LOGO" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Logo_UTFSM.png/680px-Logo_UTFSM.png" alt="utfsm"></img>
+            </div>
+            <div class="col-8">
+                <h1>SISTEMA INTEGRADO DE NOTIFICACIONES</h1>
+            </div>
+        </div>
+        <ul class="nav justify-content-center" id="NAVBAR" style="background-color: rgb(209, 209, 209);">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'home' %}">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'admin:index' %}">Administracion</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'register' %}">Registrarse</a>
+            </li>
+        </ul>    
+      </div>
+    <div>
+  
+      
+  {% block content %}
+  {% endblock content %}    
+
+</body>
+</html>
