@@ -1,7 +1,6 @@
 
 from django.contrib.auth import authenticate, login
 from django.contrib import messages, admin
-from .decorator import unauthenticated_user
 from django.shortcuts import redirect, render
 from django.http import HttpResponse, request
 from webapp.models import User, Comunicado
@@ -24,8 +23,6 @@ def home(request):
 def register_view(request, *args, **kwargs):
     return render(request, 'webapp/register.html', {})
 
-
-@unauthenticated_user
 def loginPage(request):
     
     if request.method == 'POST':
